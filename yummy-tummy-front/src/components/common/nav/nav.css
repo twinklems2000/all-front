@@ -1,0 +1,20 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  padding: 2px 8px;
+  background-color: rgb(239, 79, 95);
+}
+.navContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navContentText {
+  font-size: 18px;
+  padding: 0 15px;
+  cursor: pointer;
+}

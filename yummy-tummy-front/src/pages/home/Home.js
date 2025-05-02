@@ -26,7 +26,7 @@ const Home = () => {
   }, []);
 
   const getAllFood = async () => {
-    let result = await fetch('http://localhost:9000/getAllData', {
+    let result = await fetch('https://food-delivery-fedn.onrender.com/getAllData', {
       method: 'post',
       body: JSON.stringify({ name }),
       headers: {

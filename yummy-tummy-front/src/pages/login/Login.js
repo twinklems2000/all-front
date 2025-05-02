@@ -19,7 +19,7 @@ const Login = () => {
       setError(false)
     }
     if (error !== true && email !== undefined && password !== undefined) {
-      let result = await fetch('http://localhost:9000/login', {
+      let result = await fetch('https://food-delivery-fedn.onrender.com/login', {
         method: 'post',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },

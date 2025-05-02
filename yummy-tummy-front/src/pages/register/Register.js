@@ -24,7 +24,7 @@ const Register = () => {
       email !== undefined &&
       password !== undefined
     ) {
-      let result = await fetch('http://localhost:9000/register', {
+      let result = await fetch('https://food-delivery-fedn.onrender.com/register', {
         method: 'post',
         body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },

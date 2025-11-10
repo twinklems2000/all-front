@@ -13,7 +13,7 @@ const Order = () => {
 
   const handleOrder = async () => {
     let email = JSON.parse(localStorage.getItem('user')).email;
-    let result = await fetch('https://food-delivery-fedn.onrender.com/placeOrder', {
+    let result = await fetch('https://yummytummy-client.onrender.com/placeOrder', {
       method: 'post',
       body: JSON.stringify({
         email: email,

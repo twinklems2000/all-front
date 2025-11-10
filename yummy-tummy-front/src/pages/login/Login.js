@@ -34,7 +34,7 @@ const Login = () => {
       } else {
         navigate('/home')
         toastService.success('Login successfully')
-        localStorage.setItem('user', JSON.stringify(result?.result))
+        localStorage.setItem('user', JSON.stringify(result?.user))
         localStorage.setItem('auth', JSON.stringify(result?.auth))
       }
     }

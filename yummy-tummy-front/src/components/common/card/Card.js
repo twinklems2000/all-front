@@ -15,6 +15,7 @@ const Card = ({ foodDetail }) => {
   const handleCart = async () => {
     toastService.success('Item is added to cart');
     let food = [];
+     // eslint-disable-next-line array-callback-return
     data?.map((item) => {
       if (item?.id === foodDetail._id) {
         return (food = item);
@@ -44,7 +45,7 @@ const Card = ({ foodDetail }) => {
   return (
     <>
       <div className="card">
-        <img src={foodDetail.img} className="imgStyle" />
+        <img src={foodDetail?.img} className="imgStyle"  alt='details_img' />
         <div className="infoContainer">
           <p style={{ fontSize: '18px', fontWeight: '600' }}>
             {foodDetail.name}

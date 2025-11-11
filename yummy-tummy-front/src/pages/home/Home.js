@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useState, useEffect } from 'react';
 import './home.css';
 import Card from '../../components/common/card/Card';
@@ -6,6 +7,7 @@ import { bannerImgData, toastService } from '../../constant/data';
 const Home = () => {
   const [img, setImg] = useState(bannerImgData[0].path);
   const [foodData, setFoodData] = useState([]);
+    // eslint-disable-next-line no-unused-vars
   const [name, setName] = useState('');
 
   useEffect(() => {
@@ -23,6 +25,7 @@ const Home = () => {
 
   useEffect(() => {
     getAllFood({ name: name });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getAllFood = async () => {
@@ -37,8 +40,8 @@ const Home = () => {
 
     result = await result.json();
 
-    if (result.errors) {
-      result.errors.map((item) => {
+     if (result?.errors) {
+      result?.errors?.map((item) => {
         toastService.error(item?.msg);
       });
     } else {
@@ -48,7 +51,7 @@ const Home = () => {
 
   return (
     <>
-      <img src={img} className="bannerImg" />
+      <img src={img} className="bannerImg" alt='banner'  />
       <div className="home">
         {foodData?.length > 0 ? (
           foodData?.map((item) => {

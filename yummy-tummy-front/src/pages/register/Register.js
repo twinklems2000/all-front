@@ -31,6 +31,7 @@ const Register = () => {
       });
       result = await result.json();
       if (result.errors) {
+        // eslint-disable-next-line array-callback-return
         result.errors?.map((item) => {
           toastService.error(item?.msg);
         });

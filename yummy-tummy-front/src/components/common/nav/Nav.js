@@ -1,10 +1,18 @@
-import React from 'react';
+import  { useEffect, useState } from 'react';
 import './nav.css';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { navbarData } from '../../../constant/data';
 
 const Nav = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [active, setActive] = useState("")
+
+  useEffect(() => {
+    setActive(location?.pathname)
+  }, [location])
+  
+
   return (
     <>
       <div className="nav">
@@ -19,7 +27,7 @@ const Nav = () => {
           {navbarData?.map((item, index) => {
             return (
               <p
-                className="navContentText"
+                className={active === item?.navigate ? "navContentTextActive" : "navContentText"}
                 onClick={() => navigate(item?.navigate)}
                 key={index}
               >

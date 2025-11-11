@@ -27,8 +27,9 @@ const Order = () => {
 
     result = await result.json();
 
-    if (result.errors) {
-      result.errors.map((item) => {
+   if (result?.errors) {
+      // eslint-disable-next-line array-callback-return
+      result.errors?.map((item) => {
         toastService.error(item?.msg);
       });
     } else {
@@ -51,7 +52,7 @@ const Order = () => {
           )}
         </div>
       ) : (
-        <img src={DeliverBoyImg} className="gifStyle" />
+        <img src={DeliverBoyImg} className="gifStyle" alt='delivered_logo' />
       )}
       {foodData?.length > 0 && (
         <div className="buttonContainer">

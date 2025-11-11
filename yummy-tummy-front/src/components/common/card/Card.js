@@ -51,7 +51,7 @@ const Card = ({ foodDetail }) => {
             {foodDetail.name}
           </p>
           <p style={{ fontSize: '16px', fontWeight: '500' }}>
-            Price: {qty * foodDetail.price}
+            Price: {qty * foodDetail.price} $
           </p>
           {location.pathname !== '/order' && (
             <div className="optionContainer">
